@@ -1,8 +1,7 @@
 ﻿namespace eShop.Data.Entities;
 public class CategoryFilter
 {
-    public int Id
-    {
-        get; set;
-    }
+    public int CategoryId { get; set; }
+    public int FilterId { get; set; }
 }
+
