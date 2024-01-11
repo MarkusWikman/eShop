@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.Data", "eShop.Data\eShop.Data.csproj", "{E243AAB3-9CA8-4AB8-8DDE-A185C94FBF66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.Data", "eShop.Data\eShop.Data.csproj", "{E243AAB3-9CA8-4AB8-8DDE-A185C94FBF66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.Data.Shared", "eShop.Data.Shared\eShop.Data.Shared.csproj", "{731F3653-7645-4296-A02C-82DAD11FA8E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.Data.Shared", "eShop.Data.Shared\eShop.Data.Shared.csproj", "{731F3653-7645-4296-A02C-82DAD11FA8E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.API.Categories", "eShop.API.Categories\eShop.API.Categories.csproj", "{C6708BB1-3001-4E7F-BC6E-F59DD4D7BAAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.API.Category", "eShop.API.Categories\eShop.API.Category.csproj", "{C6708BB1-3001-4E7F-BC6E-F59DD4D7BAAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
