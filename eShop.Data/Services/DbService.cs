@@ -38,18 +38,6 @@ public class DbService : IDBService
 
         return true;
     }
-    public bool Delete<TEntity, TDto>(TDto dto) where TEntity : class where TDto : class
-    {
-        try
-        {
-            var entity = _mapper.Map<TEntity>(dto);
-            if (entity is null) return false;
-            _db.Remove(entity);
-        }
-        catch { return false; }
-
-        return true;
-    }
     public async Task<bool> SaveChangesAsync() => await _db.SaveChangesAsync() >= 0;
     public virtual async Task<TDto> SingleAsync<TEntity, TDto>(int id) where TEntity : class, IEntity where TDto : class
     {
@@ -78,5 +66,20 @@ public class DbService : IDBService
         if (navigationPropertyNames is not null)
             foreach (var name in navigationPropertyNames)
                 _db.Set<TEntity>().Include(name).Load();
+    }
+    public bool Delete<TEntity, TDto>(TDto dto)
+        where TEntity : class where TDto : class
+    {
+        try
+        {
+            var entity = _mapper.Map<TEntity>(dto);
+            if (entity is null) return false;
+            _db.Remove(entity);
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
     }
 }

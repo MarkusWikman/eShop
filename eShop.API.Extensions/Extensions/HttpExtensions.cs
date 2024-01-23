@@ -15,17 +15,17 @@ public static class HttpExtensions
         app.MapPut($"/api/{node}s/" + "{id}", HttpPutAsync<TEntity, TPutDto>);
         app.MapDelete($"/api/{node}s/" + "{id}", HttpDeleteAsync<TEntity>);
     }
-    public static void AddEndpoint<TEntity, TPostDto, TDeleteDto>(this WebApplication app)
-    where TEntity : class where TPostDto : class where TDeleteDto : class
+    public static void AddEndpoint<TEntity, TDto>(this WebApplication app)
+    where TEntity : class where TDto : class 
     {
         var node = typeof(TEntity).Name.ToLower();
-        app.MapPost($"/api/{node}s", HttpPostReferenceAsync<TEntity, TPostDto>);
+        app.MapPost($"/api/{node}s", HttpPostReferenceAsync<TEntity, TDto>);
 
-        app.MapDelete($"/api/{node}s", async (IDBService db, [FromBody] TDeleteDto dto) =>
+        app.MapDelete($"/api/{node}s", async (IDBService db, [FromBody] TDto dto) =>
         {
             try
             {
-                if (!db.Delete<TEntity, TDeleteDto>(dto)) return Results.NotFound();
+                if (!db.Delete<TEntity, TDto>(dto)) return Results.NotFound();
 
                 if (await db.SaveChangesAsync()) return Results.NoContent();
             }
@@ -75,6 +75,7 @@ public static class HttpExtensions
         }
         catch
         {
+            //return Results.NotFound();
         }
 
         return Results.BadRequest($"Couldn't add the {typeof(TEntity).Name} entity.");
