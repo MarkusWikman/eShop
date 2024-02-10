@@ -1,0 +1,16 @@
+﻿@using eShop.UI.Models.Link
+@using eShop.UI.Pages;
+
+<article>
+    <div class="bg-primary">@LinkGroup?.Name</div>
+    <div>
+        @foreach(var link in LinkGroup!.LinkOptions)
+        {
+            
+        }
+    </div>
+</article>
+
+@code {
+    [Parameter] public LinkGroup? LinkGroup { get; set; }
+}
