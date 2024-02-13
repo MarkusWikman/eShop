@@ -1,9 +1,18 @@
 ﻿@page "/"
-<NavComponent/>
-@* <MenuComponent/>
-<CarouselComponent/>
-<CardListComponent/> *@
+@inject UIService Service;
+
+<NavigationComponent/>
+
 <div class="d-flex vh-100">
-    <AsideComponent></AsideComponent>
-    <ProductComponent></ProductComponent>
+    <CascadingValue Value="Service" Name="Service">
+   <SideComponent OnChange="OnChange"/>
+   <MainProductComponent/>
+   </CascadingValue>
 </div>
+
+@code{
+    void OnChange()
+    {
+        
+    }
+}

@@ -31,17 +31,31 @@ h1:focus {
         content: "An error has occurred."
     }
 
-    /*Här nedan börjar egen css*/
+
+/*img.img-fluid {
+    height: 200px;
+}*/
+
+/*#product-image-1 {
+    height: 200px;
+}*/
+
+/*.bi.bi-cart {
+    font-size: 8.5rem !important;
+}*/
 nav a img {
-    height: 70px;
+    height: 60px;
 }
+
 .search-width {
     width: 25%;
 }
-#cart-button {
+
+/*#cart-button {
     width: 49px;
     height: 49px;
-}
+}*/
+
 .cart-count {
     top: 0;
     right: 0;
@@ -50,20 +64,30 @@ nav a img {
     margin-top: -10px;
     margin-right: -8px;
     font-size: 9pt;
-    font-family: 'Script MT';
+    font-family: 'Script MT'
 }
-.carousel.slide{
-    width: 50%;
+
+/*.dropdown .btn{
+    height:49px;
+}*/
+
+.carousel.slide {
+    width: 75%;
 }
-h5 {
-    font-size: 2.25rem;
-    font-family: fantasy;
-    background-color: blue;
+
+/*.product-card {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }
-p {
-    /*background-color: red;*/
-    font-family: fantasy;
+
+.product-card-list:first-child {
+    margin-left: 0rem;
 }
+
+.product-card-list:last-child {
+    margin-right: 0rem;
+}*/
+
 @media screen and (max-width: 470px) {
     #aside-menu, #viewport {
         height: auto !important;
